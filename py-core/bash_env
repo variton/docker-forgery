@@ -1,0 +1,9 @@
+#image name
+export INAME="py-core"
+#general
+export PATH=/root/.local/bin:$HOME/.local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib
+#env var for project
+export LAB=/home/$INAME
+#env python vm
+export PYTHONPATH=$LAB/src
