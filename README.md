@@ -4,3 +4,6 @@ environments needed for all the variton projecst.
 
 ## py-core
 Python core forgery to build python packages.
+
+## xpylib 
+Python High level Python packages forgery.
