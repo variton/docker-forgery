@@ -1,0 +1,10 @@
+alias python='python3.13'
+alias reload='. ~/.bashrc'
+alias scan-dir="du -h . | sort -h"
+alias scan-fs="sudo du -h --max-depth=1 / | sort -h"
+alias domains='cat /etc/hosts'
+alias lab='start-core;cd $LAB'
+alias start-core='source /root/.$INAME/bin/activate'
+alias stop-core='deactivate'
+alias check-leak='valgrind --leak-check=full'
+alias make-docs='cd $LAB;make docs'
