@@ -1,5 +1,6 @@
 #! /bin/bash
 
+cd /home/$INAME
 black --check --line-length 79 src \
 && pycodestyle src \
 && pydocstyle src
