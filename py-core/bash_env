@@ -1,5 +1,5 @@
 #general
-export PATH=/root/.local/bin:$PATH
+export PATH=/root/.local:/root/.local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib
 #env var for project
 export LAB=/home/$INAME

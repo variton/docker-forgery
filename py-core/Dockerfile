@@ -11,8 +11,6 @@ RUN apt install -y openssl curl build-essential
 RUN apt install -y software-properties-common
 RUN apt install -y python3-pip vim virtualenv
 
-ADD local-ci.sh /home/${INAME}/local-ci.sh
-ADD pre-shippping.sh /home/${INAME}/pre-shippping.sh
 ADD pyproject.toml /home/${INAME}/pyproject.toml
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
@@ -24,5 +22,9 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 RUN . ~/.bashrc
 #set up virtual env
 RUN /root/.local/bin/uv venv .${INAME}
+ADD .init.sh /root/.local/.init.sh
+ADD local-ci.sh /root/.local/.local-ci
+ADD pre-shippping.sh /root/.local/.pre-shippping
 
 WORKDIR /home/${INAME}
+ENTRYPOINT ["/root/.local/.init.sh"]
