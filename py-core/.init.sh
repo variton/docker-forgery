@@ -1,9 +1,8 @@
 #!/usr/bin/env sh
 set -e
 # set -x   # 👈 logs every command before it runs
-
-. /root/.py-core/bin/activate
-cd /home/$INAME
+. /opt/py-core/bin/activate 
+cd /opt
 /root/.local/bin/uv sync --active
 
 exec /bin/bash -i
