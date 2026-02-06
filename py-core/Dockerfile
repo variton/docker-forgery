@@ -1,18 +1,23 @@
 FROM ubuntu:24.04 
 
 ENV INAME="py-core"
-ENV DEP="/opt"
 
 USER root
 WORKDIR /root
 
-RUN apt update
-RUN apt upgrade -y
-RUN apt install -y openssl curl build-essential
-RUN apt install -y software-properties-common
-RUN apt install -y python3-pip vim virtualenv
+RUN apt-get update
+RUN apt-get upgrade -y
 
-ADD pyproject.toml ${DEP}/pyproject.toml
+RUN apt-get install -y build-essential 
+RUN apt-get install -y software-properties-common 
+RUN apt-get install -y openssl 
+RUN apt-get install -y curl 
+RUN apt-get install -y python3-pip 
+RUN apt-get install -y vim 
+RUN apt-get install -y virtualenv 
+RUN apt-get install -y pipx
+RUN pipx ensurepath
+
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
 ADD bash_env /root/.bash_env
@@ -21,12 +26,16 @@ ADD bash_env /root/.bash_env
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 #source all env
 RUN . ~/.bashrc
-#set up virtual env based UV_VENV_PATH
-WORKDIR ${DEP}
-RUN /root/.local/bin/uv venv ${INAME}
-ADD .init.sh /root/.local/.init.sh
+#install conf handler
+RUN pipx install remarshal
+RUN mkdir -p /opt/${INAME}
+ADD pyproject.toml /opt/${INAME}
+ADD updater.py /opt/${INAME}
+#create venv
+WORKDIR /opt/${INAME}
+RUN /root/.local/bin/uv venv
 ADD local-ci.sh /root/.local/.local-ci
+ADD .init.sh /root/.local/.init.sh
 ADD pre-shippping.sh /root/.local/.pre-shippping
-
 WORKDIR /home/${INAME}
 ENTRYPOINT ["/root/.local/.init.sh"]
