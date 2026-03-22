@@ -26,6 +26,7 @@ RUN apt install -y doctest-dev
 RUN apt install -y libspdlog-dev
 RUN apt install -y libcurl4-openssl-dev
 RUN apt install -y libfmt-dev
+RUN apt install -y lcov
 
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
