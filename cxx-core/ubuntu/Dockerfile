@@ -28,6 +28,7 @@ RUN apt install -y libcurl4-openssl-dev
 RUN apt install -y libfmt-dev
 RUN apt install -y lcov
 RUN apt install -y apt-file
+RUN apt install -y rapidjson-dev
 
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
