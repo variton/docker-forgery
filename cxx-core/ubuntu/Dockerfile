@@ -29,6 +29,8 @@ RUN apt install -y libfmt-dev
 RUN apt install -y lcov
 RUN apt install -y apt-file
 RUN apt install -y rapidjson-dev
+RUN apt install -y linux-tools-$(uname -r)
+
 
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
