@@ -32,6 +32,7 @@ RUN apt install -y rapidjson-dev
 RUN apt install -y linux-tools-common 
 RUN apt install -y linux-tools-generic
 RUN apt install -y libexpected-dev 
+RUN apt install -y python3-pip
 
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
