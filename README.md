@@ -16,3 +16,9 @@ Python core forgery to build python packages.
 
 ## xpylib 
 Python High level Python packages forgery.
+
+## ci
+CI forgery for CI pipelines on Github & Gitlab
+
+## streaming 
+Streaming forgery for video streaming.
