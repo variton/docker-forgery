@@ -11,19 +11,17 @@ RUN apt install -y openssl
 RUN apt install -y curl 
 RUN apt install -y build-essential
 RUN apt install -y vim 
-RUN apt install -y doxygen
-RUN apt install -y graphviz
 RUN apt install -y valgrind 
 RUN apt install -y heaptrack
 RUN apt install -y ninja-build
 RUN apt install -y cmake
-RUN apt install -y libspdlog-dev
-RUN apt install -y libcurl4-openssl-dev
-RUN apt install -y libfmt-dev
 RUN apt install -y linux-tools-common 
 RUN apt install -y linux-tools-generic
-RUN apt install -y libexpected-dev 
 RUN apt install -y python3-pip
+
+# dependencies for ffmpeg and v4l2
+RUN apt install -y v4l-utils 
+RUN apt install -y ffmpeg
 
 # dependencies for gstreamer
 RUN apt install -y gstreamer1.0-tools
