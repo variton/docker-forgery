@@ -24,6 +24,7 @@ RUN apt install -y v4l-utils
 RUN apt install -y ffmpeg
 
 # dependencies for gstreamer
+RUN apt install -y libgstreamer1.0-dev
 RUN apt install -y gstreamer1.0-tools
 RUN apt install -y gstreamer1.0-plugins-good
 RUN apt install -y gstreamer1.0-plugins-bad 
