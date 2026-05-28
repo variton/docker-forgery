@@ -29,6 +29,9 @@ RUN apt install -y gstreamer1.0-plugins-good
 RUN apt install -y gstreamer1.0-plugins-bad 
 RUN apt install -y gstreamer1.0-plugins-ugly
 
+# dependencies for config
+RUN apt install -y nlohmann-json3-dev
+
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
 ADD bash_env /root/.bash_env
