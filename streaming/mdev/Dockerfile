@@ -11,8 +11,6 @@ RUN apt install -y openssl
 RUN apt install -y curl 
 RUN apt install -y build-essential
 RUN apt install -y vim 
-RUN apt install -y valgrind 
-RUN apt install -y heaptrack
 RUN apt install -y ninja-build
 RUN apt install -y cmake
 RUN apt install -y linux-tools-common 
