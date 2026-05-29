@@ -1,9 +1,9 @@
-# Build the docker image
-docker build -t istreamer:1.0 .
+# streaming
 
-# Instance the container (has been prepared)
-docker run --name=streamer --hostname=cypher -v $PWD:/home/cxx-core --net=host --device=/dev/video0 --group-add video --restart=no -it istreamer:1.0 /bin/bash
+Modern C++20/C++23 container images for streaming applications and services.
 
-## Remarks
-This image is the root foundation to start a video stream.
-It is not a development environment.
+## Images
+
+- `rt` — minimal production runtime
+- `mdev` — minimal development environment
+- `dev` — full development environment
