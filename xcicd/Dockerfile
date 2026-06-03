@@ -18,6 +18,6 @@ ADD bash_env /root/.bash_env
 # actionlint
 RUN go install github.com/rhysd/actionlint/cmd/actionlint@latest
 # act
-RUN curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+RUN curl https://raw.githubusercontent.com/nektos/act/master/install.sh | bash
 
 WORKDIR /home/${INAME}
