@@ -18,7 +18,7 @@ RUN apt-get update \
       python3 \
       python3-pip \
       python3-venv \
-      pytest \
+      python3-pytest \
  && rm -rf /var/lib/apt/lists/*
 
 # actionlint
