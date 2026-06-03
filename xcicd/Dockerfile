@@ -1,23 +1,30 @@
-FROM ubuntu:26.04 
+FROM golang:latest AS builder
 
-ENV INAME="xcicd"
+RUN go install github.com/rhysd/actionlint/cmd/actionlint@latest
+
+FROM ubuntu:26.04
+
+ENV INAME=xcicd
+ENV DEBIAN_FRONTEND=noninteractive
 
 USER root
 WORKDIR /root
 
-RUN apt update
-RUN apt upgrade -y
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      ca-certificates \
+      curl \
+      git \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN apt install -y golang-go 
-RUN apt install -y curl 
+COPY --from=builder /go/bin/actionlint /usr/local/bin/actionlint
 
-ADD bashrc /root/.bashrc
-ADD bash_aliases /root/.bash_aliases
-ADD bash_env /root/.bash_env
+RUN curl -fsSL https://raw.githubusercontent.com/nektos/act/master/install.sh | bash \
+ && mv ./bin/act /usr/local/bin/act \
+ && rm -rf ./bin /tmp/*
 
-# actionlint
-RUN go install github.com/rhysd/actionlint/cmd/actionlint@latest
-# act
-RUN curl https://raw.githubusercontent.com/nektos/act/master/install.sh | bash
+COPY bashrc /root/.bashrc
+COPY bash_aliases /root/.bash_aliases
+COPY bash_env /root/.bash_env
 
 WORKDIR /home/${INAME}
