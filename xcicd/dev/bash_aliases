@@ -1,0 +1,5 @@
+alias python='python3.14'
+alias reload='. ~/.bashrc'
+alias scan-dir="du -h . | sort -h"
+alias scan-fs="sudo du -h --max-depth=1 / | sort -h"
+alias domains='cat /etc/hosts'
