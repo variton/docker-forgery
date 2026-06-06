@@ -15,7 +15,7 @@ RUN apt-get update \
       python3-pip \
       python3-venv \
       python3-pytest \
-      python3-mocker \
+      python3-pytest-mock \
  && rm -rf /var/lib/apt/lists/*
 
 COPY bashrc /root/.bashrc
