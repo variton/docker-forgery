@@ -19,6 +19,7 @@ RUN apt-get update \
       python3-pip \
       python3-venv \
       python3-pytest \
+      python3-mocker \
  && rm -rf /var/lib/apt/lists/*
 
 # actionlint
