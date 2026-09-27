@@ -1,7 +1,8 @@
 
 FROM node:26.8.1-alpine
 
-WORKDIR /app
+USER root
+WORKDIR /home/xaw-fe
 
 COPY bootstrap.sh /usr/local/bin/sveltekit-bootstrap
 RUN chmod +x /usr/local/bin/sveltekit-bootstrap
