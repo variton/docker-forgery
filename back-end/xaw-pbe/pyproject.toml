@@ -16,7 +16,7 @@ uuid = "^1.30"
 # dependencies needed by the ci
 black = "26.5.1" 
 pycodestyle = "2.15.0"
-pydocstyle = "6.3.0
+pydocstyle = "6.3.0"
 pytest = "9.1.1" 
 pytest-asyncio = "1.4.0"
 pytest-html = "4.2.0"
