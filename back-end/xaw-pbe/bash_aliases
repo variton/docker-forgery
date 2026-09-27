@@ -1,0 +1,9 @@
+alias python='python3.12'
+alias reload='. ~/.bashrc'
+alias scan-dir="du -h . | sort -h"
+alias scan-fs="sudo du -h --max-depth=1 / | sort -h"
+alias domains='cat /etc/hosts'
+alias lab='start-core;cd $LAB'
+alias start-core='source /root/.core/bin/activate'
+alias stop-core='deactivate'
+alias update-dep='uv sync --active'
