@@ -1,0 +1,4 @@
+#env var for project
+export LAB=/home/$INAME
+#env python vm
+export PYTHONPATH=$LAB/src:$LAB/tests
