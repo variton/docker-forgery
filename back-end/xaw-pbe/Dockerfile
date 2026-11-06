@@ -1,4 +1,4 @@
-FROM ubuntu:26.04 
+FROM ubuntu:latest
 
 ENV INAME="xaw-pbe"
 
@@ -25,4 +25,3 @@ RUN . ~/.bashrc
 RUN /root/.local/bin/uv venv /home/${INAME}/.core
 #install all python packages
 WORKDIR /home/${INAME}
-RUN /root/.local/bin/uv sync --active
