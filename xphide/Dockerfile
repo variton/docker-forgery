@@ -8,7 +8,7 @@ ENV INAME=xphide
 # Enable only when compiling dependencies or editing inside the container.
 ARG INSTALL_DEV_TOOLS=false
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends ca-certificates curl openssl \
+    && apt-get install -y --no-install-recommends ca-certificates curl openssl git\
     && if [ "$INSTALL_DEV_TOOLS" = "true" ]; then \
         apt-get install -y --no-install-recommends build-essential vim; \
     fi \
