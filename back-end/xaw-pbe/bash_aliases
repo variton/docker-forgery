@@ -1,9 +1,11 @@
-alias python='python3.12'
+alias python='python3.15'
 alias reload='. ~/.bashrc'
 alias scan-dir="du -h . | sort -h"
 alias scan-fs="sudo du -h --max-depth=1 / | sort -h"
 alias domains='cat /etc/hosts'
 alias lab='start-core;cd $LAB'
-alias start-core='source /root/.core/bin/activate'
+alias start-core='. .core/bin/activate'
 alias stop-core='deactivate'
 alias update-dep='uv sync --active'
+alias start-dev='uv run --active fastapi dev src/xawpbe.py --port 7777'
+alias start-prod='uv run --active hypercorn xawpbe:app --reload'
