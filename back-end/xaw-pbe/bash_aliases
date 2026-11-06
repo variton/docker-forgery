@@ -2,6 +2,7 @@ alias python='python3.15'
 alias reload='. ~/.bashrc'
 alias scan-dir="du -h . | sort -h"
 alias scan-fs="sudo du -h --max-depth=1 / | sort -h"
+alias create-core="cd $HOME;uv venv .core"
 alias domains='cat /etc/hosts'
 alias lab='start-core;cd $LAB'
 alias start-core='. .core/bin/activate'

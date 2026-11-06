@@ -13,6 +13,7 @@ RUN apt upgrade -y
 RUN apt install -y openssl curl build-essential
 RUN apt install -y software-properties-common
 RUN apt install -y python3-pip vim virtualenv
+RUN apt install -y git
 
 ADD bashrc /root/.bashrc
 ADD bash_aliases /root/.bash_aliases
